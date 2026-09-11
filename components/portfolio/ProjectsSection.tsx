@@ -110,12 +110,17 @@ function ProjectCard({
         />
 
         {/* Hover Content */}
-        <div
+        <a
+          href={project.caseStudy}
+          target="_blank"
+          rel="noopener noreferrer"
           className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isHovered ? "opacity-100" : "opacity-0"
             }`}
         >
-          <span className="text-lg tracking-wider text-white">Ver Projeto</span>
-        </div>
+          <span className="border border-white px-6 py-3 text-lg tracking-wider text-white transition-colors hover:bg-white hover:text-[var(--ocean-deep)]">
+            Ver Projeto
+          </span>
+        </a>
       </div>
 
       {/* Info */}
