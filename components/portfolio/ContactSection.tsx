@@ -61,15 +61,14 @@ export function ContactSection() {
             Contato
           </p>
 
-          <h2 className="mb-8 text-3xl font-medium leading-relaxed text-[var(--foreground)] md:text-5xl">
-            Vamos criar algo <br />
-            <span className="text-[var(--ocean-deep)]">extraordinário</span>{" "}
-            juntos?
+           <h2 className="mb-6 text-3xl font-medium leading-relaxed text-[var(--foreground)] md:text-4xl">
+            Vamos conversar sobre{" "}
+            <span className="text-[var(--ocean-deep)]">o seu projeto</span>?
           </h2>
 
-          <p className="mx-auto mb-12 max-w-xl text-lg text-[var(--foreground)]/70">
-            Estou sempre aberta a novos projetos e colaborações criativas.
-            Entre em contato e vamos conversar sobre suas ideias.
+          <p className="mx-auto mb-12 max-w-xl text-base text-[var(--foreground)]/70">
+            Estou aberta a novos projetos, pesquisas e colaborações em
+            desenvolvimento e Inteligência Artificial.
           </p>
         </div>
 
@@ -79,7 +78,9 @@ export function ContactSection() {
           }`}
         >
           <a
-            href="annandajacobs@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=annandajacobs@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative overflow-hidden bg-[var(--ocean-deep)] px-8 py-4 text-sm tracking-wider text-white uppercase transition-all hover:shadow-lg"
           >
             <span className="relative z-10">Enviar Email</span>
@@ -87,7 +88,9 @@ export function ContactSection() {
           </a>
 
           <a
-            href="www.linkedin.com/in/annanda-jacobs-166649278"
+            href="https://www.linkedin.com/in/annanda-jacobs-166649278"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative border border-[var(--ocean-deep)] bg-transparent px-8 py-4 text-sm tracking-wider text-[var(--ocean-deep)] uppercase transition-all hover:text-white"
           >
             <span className="relative z-10">LinkedIn</span>

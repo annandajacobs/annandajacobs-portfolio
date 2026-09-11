@@ -44,8 +44,8 @@ export function HeroSection() {
             transform: `translateY(${scrollY * 0.2}px)`,
           }}
         >
-          <p className="mb-4 text-sm tracking-[0.5em] text-gray/90 uppercase">
-            Desenvolvedora de Software
+          <p className="mb-4 text-1xl font-semibold tracking-[0.5em] text-gray/90 uppercase">
+            Dev Full-Stack & IA APlicada
           </p>
           <h1 className="mb-6 text-5xl font-medium tracking-wide text-white md:text-7xl lg:text-8xl">
             Annanda Jacobs

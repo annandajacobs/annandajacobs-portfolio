@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Marina Oliveira | Designer & Creative Director',
+  title: 'Annanda Jacobs',
   description: 'Portfolio de design criativo focado em branding, identidade visual e direção de arte.',
   generator: 'v0.app',
   icons: {

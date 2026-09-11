@@ -38,7 +38,7 @@ export function Navigation() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`relative text-sm tracking-wide transition-colors ${
+                className={`relative text-sm font-bold tracking-wide transition-colors ${
                   scrolled
                     ? "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
                     : "text-black/90 hover:text-white"

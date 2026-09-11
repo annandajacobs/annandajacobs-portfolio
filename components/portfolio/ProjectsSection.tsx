@@ -2,43 +2,57 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { Github, ExternalLink } from "lucide-react";
 
+// Edite os campos "caseStudy" e "live" com os links reais dos seus projetos/deploys.
 const projects = [
   {
     id: 1,
-    title: "Serenity Spa",
-    category: "Branding",
-    description: "Identidade visual completa para spa de luxo",
+    title: "Book-Recommender",
+    // category: "",
+    description: "Descubra sua próxima leitura com IA: um sistema de recomendação que utiliza o Llama 3.2:3B para interpretar objetivos de leitura, gerar candidatos semanticamente relevantes e combiná-los com validação via Google Books e ranking determinístico.",
+    // impact: "",
     color: "var(--ocean-mid)",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop",
-    tech: ["Figma", "React", "Django"],
+    image: "images/book-capa-2.png",
+    tech: ["React", "FastAPI", "Llama 3.2:3B", "Ollama", "Docker", "CI"],
+    caseStudy: "https://github.com/annandajacobs/book-recommender",
+    live: "https://youtu.be/sEnmRn1ieO0",
   },
   {
     id: 2,
-    title: "Horizon Coffee",
-    category: "Packaging",
-    description: "Design de embalagens artesanais",
+    title: "Gtur",
+    // category: "",
+    description: "Plataforma web desenvolvida em parceria com uma agência de turismo real para conectar turistas às experiências de Maceió (AL). O site combina guia turístico, geolocalização, favoritos e recomendações personalizadas utilizando NLP para transformar preferências descritas em linguagem natural em sugestões de passeios.",
+    // impact: "",
     color: "var(--peach)",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=600&fit=crop",
-    tech: ["React", "Django", "MongoDB"],
+    image: "images/gtur-3.png",
+    tech: ["React", "Django", "SentenceTransformers", "PostgreSQL", "Docker", "CI"],
+    caseStudy: "https://github.com/annandajacobs/gtur",
+    live: "https://youtu.be/b5kZX5nRQLU",
   },
   {
     id: 3,
-    title: "Wave Studio",
-    category: "Web Design",
-    description: "Website minimalista para estúdio criativo",
+    title: "Sistema de Reconhecimento Facial",
+    // category: "",
+    description: "Sistema de reconhecimento facial em tempo real para controle de acesso, combinando Visão Computacional, modelo buffalo_l do InsightFace e processamento de imagens.",
+    // impact: "",
     color: "var(--ocean-light)",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop",
-    tech: ["React", "Django", "MongoDB"],
+    image: "images/recon-2.png",
+    tech: ["React", "Flask", "OpenCV", "InsightFace", "ONNX Runtime"],
+    caseStudy: "https://github.com/annandajacobs/reconhecimento_facial",
+    live: "https://youtu.be/L6ow65ORGmU",
   },
   {
     id: 4,
-    title: "Bloom Botanicals",
-    category: "Identity",
-    description: "Marca para produtos naturais",
+    title: "Descobrindo Maceió",
+    // category: "",
+    description: "Aplicação web desenvolvida para auxiliar turistas na exploração dos principais pontos turísticos e culturais de Maceió (AL), permitindo conhecer os locais, favoritar seus pontos de interesse e visualizá-los geograficamente por meio de um mapa interativo.",
+    // impact: "",
     color: "var(--sunset)",
-    image: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&h=600&fit=crop",
+    image: "images/descobrindo-maceio.png",
     tech: ["React", "Django", "MongoDB"],
+    caseStudy: "https://github.com/annandajacobs/descobrindoMaceio",
+    live: "https://descobrindo-maceio-frontend.onrender.com/",
   },
 ];
 
@@ -73,14 +87,14 @@ function ProjectCard({
   return (
     <div
       ref={cardRef}
-      className={`group relative cursor-pointer overflow-hidden rounded-xl transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+      className={`group relative flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card)] transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
         }`}
       style={{ transitionDelay: `${index * 150}ms` }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--muted)] rounded-xl">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--muted)]">
         <Image
           src={project.image}
           alt={project.title}
@@ -105,45 +119,65 @@ function ProjectCard({
       </div>
 
       {/* Info */}
-      <div className="py-6">
-        <p
-          className="mb-2 text-md tracking-[0.1em] uppercase font-bold"
-          style={{ color: project.color }}
-        >
-          {project.category}
-        </p>
+      <div className="flex flex-1 flex-col p-6">
+        {/* <div className="mb-4 flex items-center justify-between">
+          <span
+            className="rounded-md px-2.5 py-1 text-xs font-bold tracking-[0.1em] uppercase"
+            style={{
+              backgroundColor: `${project.color}18`,
+              color: project.color,
+              border: `1px solid ${project.color}40`,
+            }}
+          >
+            {project.category}
+          </span>
+        </div> */}
+
         <h3 className="mb-2 text-3xl font-medium text-[var(--foreground)]">
           {project.title}
         </h3>
-        <p className="text-lg text-[var(--muted-foreground)]">
+        <p className="mb-3 text-lg leading-relaxed text-[var(--muted-foreground)]">
           {project.description}
         </p>
+        {/* <p
+          className="mb-4 text-sm font-medium"
+          style={{ color: project.color }}
+        >
+          {project.impact}
+        </p> */}
 
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mb-6 flex flex-wrap gap-2.5">
           {project.tech.map((t) => (
             <span
               key={t}
-              className="rounded-full px-2.5 py-0.5 text-base tracking-wide"
-              style={{
-                backgroundColor: `${project.color}18`,
-                color: project.color,
-                border: `1px solid ${project.color}40`,
-              }}
+              className="rounded-md border border-[var(--ocean-mid)]/30 bg-[var(--ocean-mid)]/5 px-3 py-1.5 text-sm font-medium tracking-wide text-[var(--ocean-deep)]"
             >
               {t}
             </span>
           ))}
         </div>
+
+        <div className="mt-auto flex items-center gap-4 border-t border-[var(--border)] pt-4">
+          <a
+            href={project.caseStudy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--peach)]"
+          >
+            <Github className="h-4 w-4" />
+            GitHub
+          </a>
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--peach)]"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Ver demonstração
+          </a>
+        </div>
       </div>
-
-
-
-      {/* Bottom line animation */}
-      <div
-        className={`absolute bottom-0 left-0 h-px transition-all duration-500 ${isHovered ? "w-full" : "w-0"
-          }`}
-        style={{ backgroundColor: project.color }}
-      />
     </div>
   );
 }
@@ -171,6 +205,7 @@ export function ProjectsSection() {
 
   return (
     <section
+      id="projetos"
       ref={sectionRef}
       className="relative bg-[var(--sky-pale)] px-6 py-24 md:py-32"
     >
@@ -186,7 +221,7 @@ export function ProjectsSection() {
             Portfolio
           </p>
           <h2 className="text-3xl font-medium text-[var(--foreground)] md:text-4xl">
-            Trabalhos Selecionados
+            Projetos pessoais e acadêmicos
           </h2>
         </div>
 
@@ -201,10 +236,15 @@ export function ProjectsSection() {
           className={`mt-16 text-center transition-all delay-700 duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
         >
-          <button className="group relative overflow-hidden border border-[var(--ocean-mid)] px-8 py-3 text-sm tracking-wider text-[var(--ocean-mid)] uppercase transition-colors hover:text-white">
+          <a
+            href="https://github.com/annandajacobs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block overflow-hidden border border-[var(--ocean-mid)] px-8 py-3 text-sm tracking-wider text-[var(--ocean-mid)] uppercase transition-colors hover:text-white"
+          >
             <span className="relative z-10">Ver Todos os Projetos</span>
             <div className="absolute inset-0 -translate-x-full bg-[var(--ocean-mid)] transition-transform duration-300 group-hover:translate-x-0" />
-          </button>
+          </a>
         </div>
       </div>
     </section>
