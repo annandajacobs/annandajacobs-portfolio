@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BASE_PATH } from "@/lib/basePath";
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -16,7 +17,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-100"
         style={{
-          backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/images/hero-background.jpeg')`,
+          backgroundImage: `url('${BASE_PATH}/images/hero-background.jpeg')`,
           transform: `translateY(${scrollY * 0.5}px) scale(1.1)`,
         }}
       />
