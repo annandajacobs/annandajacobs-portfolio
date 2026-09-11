@@ -16,7 +16,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-100"
         style={{
-          backgroundImage: "url('/images/hero-background.jpeg')",
+          backgroundImage: "url('/annandajacobs-portfolio/images/hero-background.jpeg')",
           transform: `translateY(${scrollY * 0.5}px) scale(1.1)`,
         }}
       />
