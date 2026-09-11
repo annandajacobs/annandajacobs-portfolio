@@ -32,7 +32,7 @@ const skillGroups = [
     skills: ["PostgreSQL", "MongoDB", "Oracle"],
   },
   {
-    label: "DevOps & Cloud",
+    label: "DevOps & Infraestrutura",
     color: "#FA8072",
     skills: ["Docker", "CI/CD", "Linux"],
   },
@@ -55,6 +55,7 @@ export function AboutSection() {
 
   return (
     <section
+      id="sobre"
       ref={sectionRef}
       className="relative bg-[var(--background)] px-6 py-24 md:py-32"
     >

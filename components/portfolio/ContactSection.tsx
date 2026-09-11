@@ -25,6 +25,7 @@ export function ContactSection() {
 
   return (
     <section
+      id="contato"
       ref={sectionRef}
       className="relative overflow-hidden px-6 py-24 md:py-32"
       style={{

@@ -34,7 +34,7 @@ export function Navigation() {
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
-            {["Sobre", "Projetos", "Serviços", "Contato"].map((item) => (
+            {["Sobre", "Projetos", "Contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -79,7 +79,7 @@ export function Navigation() {
         }`}
       >
         <div className="flex h-full flex-col items-center justify-center gap-8">
-          {["Sobre", "Projetos", "Serviços", "Contato"].map((item, index) => (
+          {["Sobre", "Projetos", "Contato"].map((item, index) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
