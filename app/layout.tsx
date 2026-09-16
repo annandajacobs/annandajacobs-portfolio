@@ -3,8 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Annanda Jacobs',
-  description: 'Portfolio de design criativo focado em branding, identidade visual e direção de arte.',
-  generator: 'v0.app',
+  description: 'Portfólio de Annanda Jacobs, desenvolvedora e pesquisadora com foco em inteligência artificial.',
   icons: {
     icon: "/favicon.ico",
   },
